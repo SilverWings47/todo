@@ -1,0 +1,31 @@
+$bg-color: #141a2f;
+$gradient: linear-gradient(to right, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+$gradient-task-completed: linear-gradient(to right, rgb(29, 172, 53) 0%, rgb(154, 241, 158) 100%);
+$orange : rgb(248, 91, 0);
+
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    user-select: none;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: $bg-color;
+}
+
+@mixin animation {
+    @keyframes loading {
+        to {
+            width: 100%;
+        }
+    }
+}

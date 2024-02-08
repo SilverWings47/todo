@@ -1,0 +1,84 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: #141a2f;
+}
+
+body {
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: 1px solid rgb(248, 91, 0);
+  padding: 2rem;
+  border-radius: 5px;
+}
+.container h1 {
+  color: #fff;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.container .register-link, .container .login-link {
+  text-align: center;
+  color: rgb(248, 91, 0);
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+.container .error-msg {
+  display: none;
+  color: red;
+  font-size: 0.8rem;
+}
+.container .error-msg.active {
+  display: block;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.675rem;
+}
+.form-container input {
+  background-color: transparent;
+  border: 1px solid rgb(248, 91, 0);
+  border-radius: 5px;
+  padding: 0.6rem 0.8rem;
+  min-width: 300px;
+  color: #fff;
+}
+.form-container button {
+  padding-block: 0.6rem;
+  background-color: rgb(248, 91, 0);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in;
+}
+.form-container button:hover {
+  background-color: transparent;
+  color: rgb(248, 91, 0);
+  border-color: rgb(248, 91, 0);
+}

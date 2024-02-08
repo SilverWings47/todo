@@ -1,0 +1,171 @@
+@import '_config';
+
+nav {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 2rem;
+
+    .main-title {
+        color: #fff;
+    }
+
+    .menu {
+        display: flex;
+        color: white;
+        gap: 1rem;
+
+        a {
+            color: white;
+            text-decoration: underline;
+        }
+    }
+}
+
+
+
+.container {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    width: 95%;
+    max-width: 405px;
+
+    .task-input {
+        display: flex;
+        align-items: center;
+        border: 1px solid $orange;
+        min-width: 250px;
+        border-radius: 5px;
+        overflow: visible;
+        position: relative;
+
+        & > input {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            padding: 10px;
+            min-width: 350px;
+            font-size: 1em;
+
+            &:focus {
+                outline: none;
+            }
+
+            &::placeholder {
+                color: #fff;
+                opacity: .19;
+                font-size: .9em;
+            }
+
+            @media (max-width: 425px) {
+                padding: 10px 20px;
+                min-width: 100%;
+            }
+        }
+
+        & > .add-task-btn {
+            color: $orange;
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+
+            @media (max-width: 425px){
+                & {
+                    position: absolute;
+                    top: 4.5rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    min-width: 250px;
+                    border-radius: 3px;
+                    font-size: 1.1em;
+                }
+            }
+        }
+    }
+}
+
+.todo-list {
+    overflow-y: auto;
+    margin-top: 2rem;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 700px;
+
+    .task {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-shrink: 0;
+        background-image: $gradient;
+        padding: .8rem .5rem;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+        --animation: #fff;
+        --animation-d: #fff;
+        text-transform: capitalize;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 0%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgb(89, 209, 89);
+            position: absolute;
+            z-index: 0;
+            opacity: 1;
+            animation: var(--animation);
+            @include animation;
+        }
+
+        & > .task-text {
+            display: inline-block;
+            color: #fff;
+            font-size: 1.2em;
+            z-index: 1;
+            padding-left: 5px;
+            max-width: 85%;
+            overflow-wrap: break-word;
+        }
+
+        & > .task-text.completed {
+            text-decoration: line-through;
+            text-decoration-thickness: 2px;
+            text-decoration-color: #000;
+        }
+    
+        & > .task-icons {
+            z-index: 1;
+
+            & > :not(.visible) {
+                display: none;
+            }
+
+            .visible {
+                display: inline-block;
+            }
+        }
+
+        & > .task-icons > span {
+            cursor: pointer;
+            z-index: 1;
+        }
+    }
+
+    @media (max-width: 425px) {
+        margin-top: 6rem;
+    }
+}
+
+.copyright {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: rgba(white, .2);
+    font-size: 12px;
+}

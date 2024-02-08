@@ -1,0 +1,181 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: #141a2f;
+}
+
+nav {
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+}
+nav .main-title {
+  color: #fff;
+}
+nav .menu {
+  display: flex;
+  color: white;
+  gap: 1rem;
+}
+nav .menu a {
+  color: white;
+  text-decoration: underline;
+}
+
+.container {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  width: 95%;
+  max-width: 405px;
+}
+.container .task-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(248, 91, 0);
+  min-width: 250px;
+  border-radius: 5px;
+  overflow: visible;
+  position: relative;
+}
+.container .task-input > input {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  min-width: 350px;
+  font-size: 1em;
+}
+.container .task-input > input:focus {
+  outline: none;
+}
+.container .task-input > input::-moz-placeholder {
+  color: #fff;
+  opacity: 0.19;
+  font-size: 0.9em;
+}
+.container .task-input > input::placeholder {
+  color: #fff;
+  opacity: 0.19;
+  font-size: 0.9em;
+}
+@media (max-width: 425px) {
+  .container .task-input > input {
+    padding: 10px 20px;
+    min-width: 100%;
+  }
+}
+.container .task-input > .add-task-btn {
+  color: rgb(248, 91, 0);
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+@media (max-width: 425px) {
+  .container .task-input > .add-task-btn {
+    position: absolute;
+    top: 4.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 250px;
+    border-radius: 3px;
+    font-size: 1.1em;
+  }
+}
+
+.todo-list {
+  overflow-y: auto;
+  margin-top: 2rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 700px;
+}
+.todo-list .task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  background-image: linear-gradient(to right, hsl(217, 100%, 50%) 0%, hsl(186, 100%, 69%) 100%);
+  padding: 0.8rem 0.5rem;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  --animation: #fff;
+  --animation-d: #fff;
+  text-transform: capitalize;
+}
+.todo-list .task::before {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(89, 209, 89);
+  position: absolute;
+  z-index: 0;
+  opacity: 1;
+  animation: var(--animation);
+}
+@keyframes loading {
+  to {
+    width: 100%;
+  }
+}
+.todo-list .task > .task-text {
+  display: inline-block;
+  color: #fff;
+  font-size: 1.2em;
+  z-index: 1;
+  padding-left: 5px;
+  max-width: 85%;
+  overflow-wrap: break-word;
+}
+.todo-list .task > .task-text.completed {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #000;
+}
+.todo-list .task > .task-icons {
+  z-index: 1;
+}
+.todo-list .task > .task-icons > :not(.visible) {
+  display: none;
+}
+.todo-list .task > .task-icons .visible {
+  display: inline-block;
+}
+.todo-list .task > .task-icons > span {
+  cursor: pointer;
+  z-index: 1;
+}
+@media (max-width: 425px) {
+  .todo-list {
+    margin-top: 6rem;
+  }
+}
+
+.copyright {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+}

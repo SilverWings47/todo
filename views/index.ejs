@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <title>Todo</title>
+  </head>
+
+  <body>
+    <nav>
+      <h1 class="main-title">Todo List</h1>
+      <div class="menu">
+        <p class="username">Connected as : </p> 
+        |
+        <a href="/logout">Logout</a>
+      </div>
+    </nav>
+    
+    <main class="container">
+      <div class="task-input">
+        <input class="task-input-text" type="text" placeholder="New Task..." />
+        <span class="add-task-btn material-symbols-outlined">
+          add
+        </span>
+      </div>
+      <div class="todo-list"></div>
+    </main>
+
+    <template>
+      <div class="task">
+        <span class="task-text"></span>
+        <div class="task-icons">
+          <span class="material-symbols-outlined delete-btn visible">delete</span>
+          <span class="material-symbols-outlined unchecked-btn visible">check_box_outline_blank</span>
+          <span class="material-symbols-outlined checked-btn">check_box</span>
+        </div>
+      </div>
+    </template>
+    <span class="copyright">&copy Sami Nasri</span>
+
+    <script src="scripts/script.js"></script>
+  </body>
+
+</html>
